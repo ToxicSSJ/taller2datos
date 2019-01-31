@@ -1,5 +1,7 @@
-class Problem {
+abstract class Problem {
 
-  
+  void call();
+
+  bool available();
 
 }
