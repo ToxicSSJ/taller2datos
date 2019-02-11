@@ -1,6 +1,6 @@
 abstract class Problem {
 
-  void call();
+  void call(List args);
 
   bool available();
 
