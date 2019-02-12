@@ -4,6 +4,8 @@ import 'dart:io';
 
 import 'problems/horse/horse.dart';
 import 'problems/nqueen/nqueen.dart';
+import 'problems/numberFourteen/numberFourteen.dart';
+import 'problems/shipPartition/shipPartitionProblem.dart';
 
 main(List<String> arguments) {
 
@@ -47,7 +49,7 @@ main(List<String> arguments) {
 
         print('[REINAS] Generando ubicaciones posibles con 3 reinas predefinidas...');
 
-        NQueen nQueen = new NQueen();
+        NQueen nQueen = NQueen();
         nQueen.call([true, value, [[positionA, columnA], [positionB, columnB], [positionC, columnC]]]);
         return;
 
@@ -55,7 +57,7 @@ main(List<String> arguments) {
 
       print('[REINAS] Generando ubicaciones posibles...');
 
-      NQueen nQueen = new NQueen();
+      NQueen nQueen = NQueen();
       nQueen.call([false, value]);
       return;
 
@@ -68,10 +70,27 @@ main(List<String> arguments) {
       print('[CABALLO] Tamaño del tablero \n' + value.toString() + 'x' + value.toString() + ' fijado.');
       print('[CABALLO] Generando camino del caballo...');
 
-      Horse horse = new Horse();
+      Horse horse = Horse();
       horse.call([value]);
       return;
 
+    case '3':
+      print('[NUMERO 14] Escribe le número de soluciones que desea tener:');
+      input = stdin.readLineSync();
+      int value = int.tryParse(input);
+
+      NumberFourteen numberFourteen = NumberFourteen();
+      numberFourteen.call([value]);
+      return;
+      
+    case '4':
+      print('[BARCO CARGUERO] Escribe le número de soluciones que desea tener:');
+      input = stdin.readLineSync();
+      int value = int.tryParse(input);
+
+      CargoShip cargoShip = CargoShip();
+      cargoShip.call([value]);
+      return;
   }
 
 }

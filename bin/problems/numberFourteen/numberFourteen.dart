@@ -1,6 +1,15 @@
-import 'package:taller2datos/shuffle.dart';
+import '../../common/shuffle.dart';
+import '../../problem.dart';
 
-main() => _coreNumberFourteen(5);
+class NumberFourteen implements Problem {
+
+  @override
+  bool available() => true;
+
+  @override
+  void call(args) => _coreNumberFourteen(args[0]);
+
+}
 
 /**
  * This gonna be the structure of the solutions.
@@ -33,47 +42,49 @@ _coreNumberFourteen(int numberOfSolutions) {
     _assignValuesToSector(sectorNumberThree, firstNineNumbers[2], firstNineNumbers[5], firstNineNumbers[6]);
     _assignValuesToSector(sectorNumberFour, firstNineNumbers[7], firstNineNumbers[6], firstNineNumbers[8]);
 
-    // It Checks if all the sectors sums 14.
-    if (_checkFourteenSum(sectorNumberOne) == false)
-      continue;
-    if (_checkFourteenSum(sectorNumberTwo) == false)
-      continue;
-    if (_checkFourteenSum(sectorNumberThree) == false)
-      continue;
-    if (_checkFourteenSum(sectorNumberFour) == false)
-      continue;
+      // It Checks if all the sectors sums 14.
+      if (_checkFourteenSum(sectorNumberOne) == false)
+        continue;
+      if (_checkFourteenSum(sectorNumberTwo) == false)
+        continue;
+      if (_checkFourteenSum(sectorNumberThree) == false)
+        continue;
+      if (_checkFourteenSum(sectorNumberFour) == false)
+        continue;
 
-    _printListFormatted();
-    counter++;
+      _printListFormatted();
+      counter++;
+    }
   }
-}
 
-/**
- * This method will check if the sum of the elements of the list is 14.
- * returns a bool.
- */
-_checkFourteenSum(List<int> list) => list.reduce((a, b) => a + b) == 14 ? true : false;
+  /**
+   * This method will check if the sum of the elements of the list is 14.
+   * returns a bool.
+   */
+  _checkFourteenSum(List<int> list) =>
+      list.reduce((a, b) => a + b) == 14 ? true : false;
 
-/**
- * This method will assign three values to a sector (list).
- * returns void.
- */
-_assignValuesToSector(List<int> sector, int value1, int value2, int value3) {
-  sector[0] = value1;
-  sector[1] = value2;
-  sector[2] = value3;
-}
+  /**
+   * This method will assign three values to a sector (list).
+   * returns void.
+   */
+  _assignValuesToSector(List<int> sector, int value1, int value2, int value3) {
+    sector[0] = value1;
+    sector[1] = value2;
+    sector[2] = value3;
+  }
 
-/**
- * This method will prints the list of the solutions formatted.
- * returns void.
- */
-_printListFormatted() {
-  print("_" * 11);
-  print("| ${firstNineNumbers[0]}      ${firstNineNumbers[4]} |");
-  print("|  ${firstNineNumbers[1]}   ${firstNineNumbers[3]}   |");
-  print("|    ${firstNineNumbers[2]}     |");
-  print("|    ${firstNineNumbers[5]}     |");
-  print("| ${firstNineNumbers[7]}  ${firstNineNumbers[6]}  ${firstNineNumbers[8]}  |");
-  print("_" * 11);
-}
+  /**
+   * This method will prints the list of the solutions formatted.
+   * returns void.
+   */
+  _printListFormatted() {
+    print("_" * 11);
+    print("| ${firstNineNumbers[0]}      ${firstNineNumbers[4]} |");
+    print("|  ${firstNineNumbers[1]}   ${firstNineNumbers[3]}   |");
+    print("|    ${firstNineNumbers[2]}     |");
+    print("|    ${firstNineNumbers[5]}     |");
+    print(
+        "| ${firstNineNumbers[7]}  ${firstNineNumbers[6]}  ${firstNineNumbers[8]}  |");
+    print("_" * 11);
+  }

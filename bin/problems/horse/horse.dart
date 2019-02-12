@@ -5,9 +5,7 @@ import '../../problem.dart';
 class Horse implements Problem {
 
   @override
-  bool available() {
-    return true;
-  }
+  bool available() => true;
 
   @override
   void call(args) {

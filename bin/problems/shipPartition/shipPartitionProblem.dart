@@ -1,7 +1,14 @@
-import 'package:taller2datos/scanner.dart';
+import '../../common/scanner.dart';
+import '../../problem.dart';
 
-main() => shipPartitionProblemCore();
+class CargoShip implements Problem {
 
+  @override
+  bool available() => true;
+
+  @override
+  void call(args) => shipPartitionProblemCore();
+}
 
 List _productList = List(); // This is the list of the products of the problem.
 List _leftContainer = List(); // The left part of the ship container.
