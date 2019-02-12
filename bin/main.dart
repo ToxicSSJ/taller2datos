@@ -75,16 +75,16 @@ main(List<String> arguments) {
       return;
 
     case '3':
-      print('[NUMERO 14] Escribe le número de soluciones que desea tener:');
+      print('[NUMERO 14] Escribe el número de soluciones que desea tener:');
       input = stdin.readLineSync();
       int value = int.tryParse(input);
 
       NumberFourteen numberFourteen = NumberFourteen();
       numberFourteen.call([value]);
       return;
-      
+
     case '4':
-      print('[BARCO CARGUERO] Escribe le número de soluciones que desea tener:');
+      print('[BARCO CARGUERO] Ecrible el número de productos que desea añadir:');
       input = stdin.readLineSync();
       int value = int.tryParse(input);
 
